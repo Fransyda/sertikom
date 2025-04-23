@@ -9,7 +9,8 @@ class CreatePenerbitTable extends Migration
     public function up()
     {
         Schema::create('penerbit', function (Blueprint $table) {
-            $table->id('id_penerbit');
+            $table->id('kd_penerbit');
+            $table->string('id_penerbit');
             $table->string('nama_penerbit');
             $table->string('alamat');
             $table->string('kota');

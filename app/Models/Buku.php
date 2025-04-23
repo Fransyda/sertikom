@@ -10,9 +10,10 @@ class Buku extends Model
     use HasFactory;
 
     protected $table = 'buku';
-    protected $primaryKey = 'id_buku';
+    protected $primaryKey = 'kd_buku';
 
     protected $fillable = [
+        'id_buku',
         'kategori',
         'nama_buku',
         'harga',

@@ -23,6 +23,7 @@ class BukuController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'id_buku' => 'required',
             'kategori' => 'required',
             'nama_buku' => 'required',
             'harga' => 'required|numeric',
@@ -45,6 +46,7 @@ class BukuController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'id_buku' => 'required',
             'kategori' => 'required',
             'nama_buku' => 'required',
             'harga' => 'required|numeric',

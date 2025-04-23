@@ -7,6 +7,10 @@
         @csrf
 
         <div class="mb-3">
+            <label for="id_penerbit" class="form-label">ID Penerbit</label>
+            <input type="text" name="id_penerbit" id="id_penerbit" class="form-control" value="{{ old('id_penerbit') }}">
+        </div>
+        <div class="mb-3">
             <label for="nama_penerbit" class="form-label">Nama Penerbit</label>
             <input type="text" name="nama_penerbit" id="nama_penerbit" class="form-control" value="{{ old('nama_penerbit') }}">
         </div>

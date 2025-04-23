@@ -9,7 +9,8 @@ class CreateBukuTable extends Migration
     public function up()
     {
         Schema::create('buku', function (Blueprint $table) {
-            $table->id('id_buku');
+            $table->id('kd_buku');
+            $table->string('id_buku');
             $table->string('kategori');
             $table->string('nama_buku');
             $table->decimal('harga', 10, 2); // Menggunakan decimal untuk harga

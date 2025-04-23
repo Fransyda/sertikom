@@ -3,10 +3,14 @@
 @section('content')
 <div class="container">
     <h2>Edit Buku</h2>
-    <form action="{{ route('buku.update', $buku->id_buku) }}" method="POST">
+    <form action="{{ route('buku.update', $buku->kd_buku) }}" method="POST">
         @csrf
         @method('PUT')
 
+        <div class="mb-3">
+            <label>ID Buku</label>
+            <input type="text" name="id_buku" class="form-control" value="{{ old('id_buku', $buku->id_buku) }}">
+        </div>
         <div class="mb-3">
             <label>Kategori</label>
             <input type="text" name="kategori" class="form-control" value="{{ old('kategori', $buku->kategori) }}">
