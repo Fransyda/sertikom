@@ -1,41 +1,52 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <h2>Edit Penerbit</h2>
-        <form action="{{ route('penerbit.update', $penerbit->kd_penerbit) }}" method="POST">
-            @csrf
-            @method('PUT')
+<div class="container">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Edit Penerbit <small>Ubah data penerbit yang sudah ada</small></h2>
+            <div class="clearfix"></div>
+        </div>
 
-            <div class="mb-3">
-                <label for="id_penerbit" class="form-label">ID Penerbit</label>
-                <input type="text" name="id_penerbit" id="id_penerbit" class="form-control"
-                    value="{{ old('id_penerbit', $penerbit->id_penerbit) }}">
-            </div>
-            <div class="mb-3">
-                <label for="nama_penerbit" class="form-label">Nama Penerbit</label>
-                <input type="text" name="nama_penerbit" id="nama_penerbit" class="form-control"
-                    value="{{ old('nama_penerbit', $penerbit->nama_penerbit) }}">
-            </div>
+        <div class="x_content">
+            <form action="{{ route('penerbit.update', $penerbit->kd_penerbit) }}" method="POST">
+                @csrf
+                @method('PUT')
 
-            <div class="mb-3">
-                <label for="alamat" class="form-label">Alamat</label>
-                <input type="text" name="alamat" id="alamat" class="form-control"
-                    value="{{ old('alamat', $penerbit->alamat) }}">
-            </div>
+                <!-- ID Penerbit -->
+                <div class="mb-3">
+                    <label class="form-label">ID Penerbit</label>
+                    <input type="text" name="id_penerbit" class="form-control" value="{{ old('id_penerbit', $penerbit->id_penerbit) }}">
+                </div>
 
-            <div class="mb-3">
-                <label for="kota" class="form-label">Kota</label>
-                <input type="text" name="kota" id="kota" class="form-control" value="{{ old('kota', $penerbit->kota) }}">
-            </div>
+                <!-- Nama Penerbit -->
+                <div class="mb-3">
+                    <label class="form-label">Nama Penerbit</label>
+                    <input type="text" name="nama_penerbit" class="form-control" value="{{ old('nama_penerbit', $penerbit->nama_penerbit) }}">
+                </div>
 
-            <div class="mb-3">
-                <label for="telepon" class="form-label">Telepon</label>
-                <input type="text" name="telepon" id="telepon" class="form-control"
-                    value="{{ old('telepon', $penerbit->telepon) }}">
-            </div>
+                <!-- Alamat -->
+                <div class="mb-3">
+                    <label class="form-label">Alamat</label>
+                    <input type="text" name="alamat" class="form-control" value="{{ old('alamat', $penerbit->alamat) }}">
+                </div>
 
-            <button type="submit" class="btn btn-primary">Update</button>
-        </form>
+                <!-- Kota -->
+                <div class="mb-3">
+                    <label class="form-label">Kota</label>
+                    <input type="text" name="kota" class="form-control" value="{{ old('kota', $penerbit->kota) }}">
+                </div>
+
+                <!-- Telepon -->
+                <div class="mb-3">
+                    <label class="form-label">Telepon</label>
+                    <input type="text" name="telepon" class="form-control" value="{{ old('telepon', $penerbit->telepon) }}">
+                </div>
+
+                <!-- Tombol Update -->
+                <button class="btn btn-primary">Update</button>
+            </form>
+        </div>
     </div>
+</div>
 @endsection

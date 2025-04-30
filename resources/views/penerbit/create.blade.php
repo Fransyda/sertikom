@@ -2,35 +2,62 @@
 
 @section('content')
 <div class="container">
-    <h2>Tambah Penerbit</h2>
-    <form action="{{ route('penerbit.store') }}" method="POST">
-        @csrf
-
-        <div class="mb-3">
-            <label for="id_penerbit" class="form-label">ID Penerbit</label>
-            <input type="text" name="id_penerbit" id="id_penerbit" class="form-control" value="{{ old('id_penerbit') }}">
-        </div>
-        <div class="mb-3">
-            <label for="nama_penerbit" class="form-label">Nama Penerbit</label>
-            <input type="text" name="nama_penerbit" id="nama_penerbit" class="form-control" value="{{ old('nama_penerbit') }}">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Tambah Penerbit <small>Form input data penerbit baru</small></h2>
+            <div class="clearfix"></div>
         </div>
 
-        <div class="mb-3">
-            <label for="alamat" class="form-label">Alamat</label>
-            <input type="text" name="alamat" id="alamat" class="form-control" value="{{ old('alamat') }}">
-        </div>
+        <div class="x_content">
+            <form action="{{ route('penerbit.store') }}" method="POST">
+                @csrf
 
-        <div class="mb-3">
-            <label for="kota" class="form-label">Kota</label>
-            <input type="text" name="kota" id="kota" class="form-control" value="{{ old('kota') }}">
-        </div>
+                <!-- ID Penerbit -->
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">ID Penerbit</label>
+                    <div class="col-md-9">
+                        <input type="text" name="id_penerbit" class="form-control" placeholder="Masukkan ID Penerbit" value="{{ old('id_penerbit') }}">
+                    </div>
+                </div>
 
-        <div class="mb-3">
-            <label for="telepon" class="form-label">Telepon</label>
-            <input type="text" name="telepon" id="telepon" class="form-control" value="{{ old('telepon') }}">
-        </div>
+                <!-- Nama Penerbit -->
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Nama Penerbit</label>
+                    <div class="col-md-9">
+                        <input type="text" name="nama_penerbit" class="form-control" placeholder="Masukkan Nama Penerbit" value="{{ old('nama_penerbit') }}">
+                    </div>
+                </div>
 
-        <button type="submit" class="btn btn-primary">Simpan</button>
-    </form>
+                <!-- Alamat -->
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Alamat</label>
+                    <div class="col-md-9">
+                        <input type="text" name="alamat" class="form-control" placeholder="Masukkan Alamat" value="{{ old('alamat') }}">
+                    </div>
+                </div>
+
+                <!-- Kota -->
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Kota</label>
+                    <div class="col-md-9">
+                        <input type="text" name="kota" class="form-control" placeholder="Masukkan Kota" value="{{ old('kota') }}">
+                    </div>
+                </div>
+
+                <!-- Telepon -->
+                <div class="row mb-3">
+                    <label class="col-md-3 col-form-label">Telepon</label>
+                    <div class="col-md-9">
+                        <input type="text" name="telepon" class="form-control" placeholder="Masukkan Telepon" value="{{ old('telepon') }}">
+                    </div>
+                </div>
+
+                <!-- Tombol Simpan -->
+                <div class="text-end">
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 @endsection

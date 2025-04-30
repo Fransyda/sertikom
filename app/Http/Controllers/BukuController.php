@@ -65,6 +65,6 @@ class BukuController extends Controller
         $buku = Buku::findOrFail($id);
         $buku->delete();
 
-        return redirect()->route('buku.index')->with('success', 'Data buku berhasil dihapus.');
+        return redirect()->route('buku.index')->with('success', 'Data buku berhasil kdihapus.');
     }
 }
